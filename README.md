@@ -1,7 +1,6 @@
 # gan-skin-lesion
 ### Code to reproduce the results for the paper "Skin Lesion Sythesis with Generative Adversarial Networks" in ISIC Skin Image Analysis Workshop and Challenge @ MICCAI 2018.
-### In this repository you will find the code to generate the "Instance" and "Semantic" images. The network used is pix2pixHD, which is referenced below. 
-### You can find our PGAN modification in the link [soon] and the classification network used for our tests [here](https://github.com/learningtitans/isic2018-part3).
+In this repository you will find the code to generate the "Instance" and "Semantic" images. The network used is pix2pixHD, which is referenced below. You can find our PGAN modification in the link [soon] and the classification network used for our tests [here](https://github.com/learningtitans/isic2018-part3).
 
 # Preparing the data and environment
 ### Configuring the container.
