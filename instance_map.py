@@ -12,7 +12,7 @@ from tqdm import tqdm
 import os
 from joblib import Parallel, delayed
 
-# Pega os nomes de todas as imagens a serem trabalhadas, para trabalharmos uma a uma.
+# Directories
 atri_dir = 'attribute_512p/'
 image_dir = 'images_512p/'
 segmentation_dir = 'seg_512p/'
@@ -65,7 +65,7 @@ def create_instance_map(family):
 			last = 7000
 		else:
 			print('ERROR: Invalid File Found!!!!')
-		# Apenas para onde ha a mascara, coloque o valor dos superpixels a partir de last em instance_map.
+		# For each superpixel in the selected mask, update the pixel values incrementing the value for each superpixel found.
 		for v in np.unique(segments):
 			union = mask[segments == v]
 			if float(len(union[union > 0])) / float(len(union)) > 0.5:
@@ -77,45 +77,3 @@ def create_instance_map(family):
 
 	
 results = Parallel(n_jobs=8)(delayed(create_instance_map)(family) for family in tqdm(file_name_arr))
-
-'''
-# load the image and apply SLIC superpixel segmentation to it via
-# scikit-image
-mask = misc.imread('data/ISIC2018_Task2_Training_GroundTruth_v3/ISIC_0000027_attribute_pigment_network.png')
-image = misc.imread(args["image"])
-instance_map = np.zeros(image.shape[:2], dtype=int)
-segments = slic(img_as_float(image), n_segments=1000,
-	slic_zero=True, compactness=1, sigma=2)
-# loop over each of the unique superpixels
-last = 1
-for v in np.unique(segments):
-	# construct a mask for the segment so we can compute image
-	# statistics for *only* the masked region
-	#print(image[segments == v])
-	if mask[segments == v][0] != 0:
-		instance_map[segments == v] = last
-		last += 1
-	else:
-		instance_map[segments == v] = 0
-	#print(i)
-segments = mark_boundaries(mask, segments)
-segments = rescale_intensity(segments, out_range=(0, 255)).astype("uint8")
-io.imsave('segments.png', segments)
-print(instance_map)
-print(np.min(instance_map))
-print(np.max(instance_map))
-print(instance_map.dtype)
-#misc.toimage(instance_map, cmin=0, cmax=65536, mode='I').save('after.png')
-
-instance_map = instance_map.astype(np.uint32)
-im = Image.fromarray(instance_map)
-im.save('after.png')
-
-a = misc.imread('after.png')
-print(a.shape)
-
-print(a[a>127])
-print(a[a>255])
-print(instance_map.shape)
-print(segments.shape)
-'''
