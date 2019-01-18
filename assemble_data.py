@@ -63,12 +63,4 @@ for family in tqdm(file_name_arr):
 				base_image[base_image > 7] = 7
 		else:
 			print('ERROR: Invalid File Found!!!!')
-	#print(family, "Approximated amount of override: ", len(base_image[base_image > 7]))
-	#print(base_image[base_image>0])
 	misc.toimage(base_image, cmin=0, cmax=255).save(output_dir+family+'_semantic.png')
-
-	# Ler todos os attributes de uma imagem
-	# Combinar esses atributos em uma unica imagem
-	# Redimensionar,
-	# convert semantic_ISIC_0016009.png -resize 512x1024\> -size 1024x512 xc:black +swap -gravity center -composite resize_semantic_ISIC_0016009.png
-	# find . -name '*.png' -exec sh -c 'echo "{}"; convert "{}" -resize 1024x512\> -size 1024x512 xc:black +swap -gravity center -composite `basename "a{}" .png`.png' \;
