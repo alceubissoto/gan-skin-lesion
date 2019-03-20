@@ -1,9 +1,11 @@
 # gan-skin-lesion
-### Code to reproduce the results for the paper "Skin Lesion Synthesis with Generative Adversarial Networks" in ISIC Skin Image Analysis Workshop and Challenge @ MICCAI 2018.
+### Code to reproduce the results for the [paper](https://arxiv.org/abs/1902.03253) "Skin Lesion Synthesis with Generative Adversarial Networks" in ISIC Skin Image Analysis Workshop and Challenge @ MICCAI 2018.
 In this repository you will find the code to generate the "Instance" and "Semantic" images. The network used is pix2pixHD (Wang et al.), which is referenced below. You can find our PGAN modification in the link [here](https://github.com/alceubissoto/cond-pgan) and the classification network used for our tests [here](https://github.com/learningtitans/isic2018-part3).
 
 ### Example Synthetic Images
 <img src="/../images_examples/image_examples/semantic_ISIC_0000031_synthesized_image.jpg?raw=true" width="425"/> <img src="/../images_examples/image_examples/semantic_ISIC_0015995_synthesized_image.jpg?raw=true" width="425"/>
+
+<img src="/../images_examples/image_examples/semantic_ISIC_0000097_synthesized_image.jpg?raw=true" width="425"/> <img src="/../images_examples/image_examples/semantic_ISIC_0015139_synthesized_image.jpg?raw=true" width="425"/>
 
 
 # Preparing the data and environment
@@ -43,3 +45,16 @@ in train and test, with 250 out of the total 2594 images for test.
 
 ### Run test
 `python3 test.py --name label2skin --dataroot datasets/skin/ --label_nc --gpu_id 0`
+
+## Citation
+If you find this useful for your research, please use the following.
+
+```
+  @inproceedings{bissoto2018skin,
+	title={Skin Lesion Synthesis with Generative Adversarial Networks},
+	author={Bissoto, Alceu and Perez, F\'abio and Valle, Eduardo and Avila, Sandra},
+	booktitle={ISIC Skin Image Analysis Workshop},
+	year={2018}
+}
+
+```
