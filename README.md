@@ -53,8 +53,10 @@ If you find this useful for your research, please use the following.
   @inproceedings{bissoto2018skin,
 	title={Skin Lesion Synthesis with Generative Adversarial Networks},
 	author={Bissoto, Alceu and Perez, F\'abio and Valle, Eduardo and Avila, Sandra},
-	booktitle={ISIC Skin Image Analysis Workshop},
-	year={2018}
+	booktitle={OR 2.0 Context-Aware Operating Theaters, Computer Assisted Robotic Endoscopy, Clinical Image-Based Procedures, and Skin Image Analysis},
+        pages={294--302},
+        year={2018},
+        publisher={Springer}
 }
 
 ```
