@@ -36,7 +36,7 @@ in train and test, with 250 out of the total 2594 images for test.
 # Running the GAN
 
 ### Install dependencies
-`pip3 install torch torchvision dominate tqdm scikit-learn`
+`pip3 install -r requirements.txt`
 
 ### Run training
 `python3 train.py --name label2skin --dataroot datasets/skin/ --label_nc 8 --gpu_id 0 --batchSize 2 --tf_log --continue_train`
