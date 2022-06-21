@@ -1,5 +1,5 @@
 dominate==2.3.1
-numpy==1.14.5
+numpy==1.22.0
 Pillow==7.1.0
 scikit-learn==0.20.3
 scipy==1.1.0
