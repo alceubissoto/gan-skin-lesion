@@ -1,6 +1,6 @@
 dominate==2.3.1
 numpy==1.14.5
-Pillow==7.1.0
+Pillow==9.3.0
 scikit-learn==0.20.3
 scipy==1.1.0
 six==1.11.0
